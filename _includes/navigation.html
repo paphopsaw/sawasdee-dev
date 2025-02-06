@@ -1,6 +1,6 @@
 <nav>
-  <a href="/"></a>
-  {% for item in site.data.navigation.size %}
+  <a href="/">Home</a>
+  {% for item in site.data.navigation %}
   <a href="{{ item.link }}"> {{ item.name }} </a>
   {% endfor %}
 </nav>

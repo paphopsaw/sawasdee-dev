@@ -11,36 +11,37 @@ nav {
   color: #ffffff;
   background-color: #000000;
 
-  .nav-drop-button-input {
+  .nav-checkbox {
     display: none;
+    visibility: hidden;
   }
 
-  .nav-drop-button {
+  .nav-toggle {
     cursor: pointer;
     display: none;
   }
 
   @media only screen and (max-width: 768px) {
-    .nav-drop-button {
+    .nav-toggle {
       display: block;
     }
 
     .nav-menu {
-      z-index: 1;
       margin-top: $nav-height;
       top: 0;
       left: 0;
       width: 100%;
 
       background-color: #000000;
-      visibility: hidden;
       position: absolute;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
+      height: 0;
     }
 
-    .nav-drop-button-input:checked ~ .nav-menu {
-      visibility: visible;
+    .nav-checkbox:checked ~ .nav-menu {
+      height: calc(100% - $nav-height);
     }
   }
 }

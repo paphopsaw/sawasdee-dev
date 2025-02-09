@@ -35,8 +35,52 @@ nav {
   }
 
   @media only screen and (max-width: v.$device-break-point) {
+    & {
+      padding: 0;
+      padding-left: 20px;
+    }
+
     .nav-toggle {
+      position: relative;
       display: block;
+      margin: 16px;
+      width: 24px;
+      height: 24px;
+
+      span,
+      span::before,
+      span::after {
+        position: absolute;
+        content: "";
+        background-color: #ffffff;
+        height: 2px;
+        border-radius: 1px;
+        width: 100%;
+        transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+      }
+      span {
+        top: 3px;
+      }
+      span::before {
+        top: 8px;
+      }
+      span::after {
+        top: 16px;
+      }
+    }
+
+    .nav-checkbox:checked ~ .nav-toggle {
+      span {
+        background-color: inherit;
+      }
+      span::before {
+        transform: rotate(45deg);
+        top: 7px;
+      }
+      span::after {
+        transform: rotate(135deg);
+        top: 7px;
+      }
     }
 
     .nav-menu {

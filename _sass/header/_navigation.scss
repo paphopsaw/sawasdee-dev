@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 $nav-height: 52px;
 $device-break-point: 768px;
 
@@ -32,7 +34,7 @@ nav {
     display: none;
   }
 
-  @media only screen and (max-width: $device-break-point) {
+  @media only screen and (max-width: v.$device-break-point) {
     .nav-toggle {
       display: block;
     }

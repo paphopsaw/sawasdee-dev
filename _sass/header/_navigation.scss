@@ -1,4 +1,6 @@
-$nav-height: 40px;
+$nav-height: 52px;
+
+$device-break-point: 768px;
 
 nav {
   user-select: none;
@@ -8,8 +10,16 @@ nav {
   align-items: center;
   padding: 0 20px;
   height: $nav-height;
-  color: #ffffff;
-  background-color: #000000;
+
+  .title {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .nav-menu {
+    font-family: sans-serif;
+    font-size: 1.1em;
+  }
 
   .nav-checkbox {
     display: none;
@@ -21,7 +31,7 @@ nav {
     display: none;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: $device-break-point) {
     .nav-toggle {
       display: block;
     }

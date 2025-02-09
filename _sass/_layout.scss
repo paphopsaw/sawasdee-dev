@@ -1,0 +1,9 @@
+$max-content-width: 1080px;
+
+header > *,
+main > *,
+footer > * {
+  max-width: 100%;
+  width: $max-content-width;
+  margin: 0 auto;
+}

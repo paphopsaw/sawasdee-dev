@@ -1,0 +1,27 @@
+@use "variables" as v;
+.hero {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 600px;
+  padding: 20px;
+
+  h1 {
+    font-size: 6em;
+  }
+
+  @media only screen and (max-width: v.$device-break-point) {
+    & {
+      align-items: start;
+
+      text-align: left;
+    }
+  }
+
+  h3 {
+    font-weight: normal;
+  }
+}

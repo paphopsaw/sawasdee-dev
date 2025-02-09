@@ -8,3 +8,7 @@ footer > * {
   width: $max-content-width;
   margin: 0 auto;
 }
+
+main {
+  max-height: 100%;
+}

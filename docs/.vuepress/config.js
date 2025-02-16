@@ -14,7 +14,6 @@ const dateSorter = (pageA, pageB) => {
 };
 
 export default defineUserConfig({
-  base: "/sawasdee-dev/",
   lang: "en-US",
 
   title: "Sawasdee.dev",

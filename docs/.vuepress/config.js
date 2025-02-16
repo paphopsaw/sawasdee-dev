@@ -42,7 +42,6 @@ export default defineUserConfig({
       // Getting article info
       getInfo: ({ frontmatter, title, data }) => ({
         title,
-        author: frontmatter.author || "",
         date: frontmatter.date || null,
         tag: frontmatter.tag || [],
       }),

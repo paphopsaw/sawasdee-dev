@@ -29,15 +29,11 @@ const route = useRoute();
 </template>
 
 <style lang="scss" scoped>
-@use "@vuepress/theme-default/styles/mixins";
-
 .tag-wrapper {
-  @include mixins.content_wrapper;
-
-  padding-top: 1rem !important;
-  padding-bottom: 0 !important;
-
-  font-size: 14px;
+  padding-top: 1rem;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  font-size: 0.8rem;
 
   a {
     color: inherit;
@@ -49,39 +45,32 @@ const route = useRoute();
 
     overflow: hidden;
 
-    margin: 0.3rem 0.6rem 0.8rem;
+    margin: 0.4rem;
     padding: 0.4rem 0.8rem;
-    border-radius: 0.25rem;
+    border-radius: 100vh;
+    border: 1px solid;
+
+    line-height: 0.8rem;
 
     cursor: pointer;
 
     transition: background 0.3s, color 0.3s;
 
-    @media (max-width: 419px) {
-      font-size: 0.9rem;
-    }
-
     .tag-num {
       display: inline-block;
 
-      min-width: 1rem;
-      height: 1.2rem;
-      margin-inline-start: 0.2em;
-      padding: 0 0.1rem;
       border-radius: 0.6rem;
 
-      font-size: 0.7rem;
-      line-height: 1.2rem;
       text-align: center;
     }
 
     &.route-link-active {
-      background: var(--c-brand);
-      color: red;
+      background: var(--vp-c-accent);
+      color: var(--vp-c-bg);
+    }
 
-      .tag-num {
-        color: var(--c-bg);
-      }
+    &:hover:not(.route-link-active) {
+      box-shadow: 0 0 0 1px var(--vp-c-border-hard);
     }
   }
 }

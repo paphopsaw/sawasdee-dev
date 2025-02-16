@@ -1,13 +1,11 @@
 ---
-date: 2022-01-01
-category:
-  - CategoryA
+date: 2025-02-16
 tag:
   - tag A
   - tag B
 ---
 
-# Article 1
+# First Blog Post
 
 ## Heading 2
 

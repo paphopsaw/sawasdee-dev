@@ -65,7 +65,7 @@ defineProps({
 
     display: inline-block;
 
-    font-size: 1.28rem;
+    font-size: 1.4rem;
     font-weight: bold;
     line-height: 2rem;
 

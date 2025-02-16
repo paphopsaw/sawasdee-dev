@@ -3,7 +3,6 @@ home: false
 title: About
 
 sidebar: false
-footer: MIT Licensed | Copyright © 2025-present Stock Sawasdee
 ---
 
 # About me

@@ -6,12 +6,11 @@ import { viteBundler } from "@vuepress/bundler-vite";
 export default defineUserConfig({
   lang: "en-US",
 
-  title: "VuePress",
+  title: "Sawasdee.dev",
   description: "My first VuePress Site",
 
   theme: defaultTheme({
-    logo: "https://vuejs.press/images/hero.png",
-
+    contributors: false,
     navbar: [
       {
         text: "About",

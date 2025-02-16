@@ -22,7 +22,7 @@ const route = useRoute();
     >
       {{ name }}
       <span class="tag-num">
-        {{ tags.length }}
+        {{ items.length }}
       </span>
     </RouteLink>
   </div>
@@ -77,7 +77,7 @@ const route = useRoute();
 
     &.route-link-active {
       background: var(--c-brand);
-      color: var(--c-bg);
+      color: red;
 
       .tag-num {
         color: var(--c-bg);

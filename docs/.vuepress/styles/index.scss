@@ -1,0 +1,25 @@
+:root {
+  // accent colors
+  --vp-c-accent: hsl(355, 57%, 38%);
+  --vp-c-accent-bg: hsl(355, 48%, 46%);
+  --vp-c-accent-hover: hsl(355, 48%, 52%);
+  --vp-c-accent-text: var(--vp-c-white);
+  --vp-c-accent-soft: hsla(355, 84%, 39%, 0.14);
+}
+
+main {
+  max-height: 100%;
+}
+
+.vp-hero-action-button {
+  padding: 0.4rem 0.8rem;
+}
+
+.vp-hero-action-button.primary {
+  background-color: var(--vp-c-accent-bg);
+  color: var(--vp-c-accent-text);
+}
+
+.vp-hero-action-button.secondary:hover {
+  color: var(--vp-c-accent-hover);
+}

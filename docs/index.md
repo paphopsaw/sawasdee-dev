@@ -7,5 +7,8 @@ actions:
   - text: About me
     link: /about/
     type: primary
+  - text: Blog
+    link: /blog/
+    type: secondary
 footer: Copyright © 2025 Stock Sawasdee
 ---

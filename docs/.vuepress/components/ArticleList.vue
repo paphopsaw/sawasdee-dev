@@ -27,7 +27,9 @@ defineProps({
           new Date(info.date).toLocaleDateString()
         }}</span>
 
-        <span v-if="info.tag" class="tag">Tags: {{ info.tag.join(", ") }}</span>
+        <span v-if="info.tags" class="tag"
+          >Tags: {{ info.tags.join(", ") }}</span
+        >
       </div>
     </article>
   </div>

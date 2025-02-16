@@ -32,6 +32,13 @@ export default defineUserConfig({
       },
     ],
   }),
+  extendsPage(page) {
+    // Check if the page is in a specific folder
+    if (page.pathInferred && page.pathInferred.startsWith("/posts/")) {
+      // Set the layout for all pages in this folder
+      page.frontmatter.layout = "Post";
+    }
+  },
 
   plugins: [
     blogPlugin({
@@ -43,13 +50,13 @@ export default defineUserConfig({
       getInfo: ({ frontmatter, title, data }) => ({
         title,
         date: frontmatter.date || null,
-        tag: frontmatter.tag || [],
+        tags: frontmatter.tags || [],
       }),
 
       category: [
         {
           key: "tags",
-          getter: (page) => page.frontmatter.tag || [],
+          getter: (page) => page.frontmatter.tags || [],
           path: "/blog/tags/",
           layout: "Tags",
           itemPath: "/blog/tags/:name/",

@@ -24,8 +24,14 @@ jobs:
           node-version: 22
           cache: "yarn"
 
+      - name: Enable Corepack and Set Yarn v4
+        run: |
+          corepack enable
+          corepack prepare yarn@4.6.0 --activate
+          yarn --version  # Verify installation
+
       - name: Install deps
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       # run build script
       - name: Build VuePress site

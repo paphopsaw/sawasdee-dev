@@ -1,15 +1,11 @@
 ---
 home: true
 title: Home
-heroImage: https://vuejs.press/images/hero.png
+heroText: Hello.
+tagline: I'm a Thai software engineer based in Japan.
 actions:
-  - text: Get Started
-    link: /getting-started.html
+  - text: About me
+    link: /about/
     type: primary
-
-  - text: Introduction
-    link: https://vuejs.press/guide/introduction.html
-    type: secondary
-
-footer: MIT Licensed | Copyright © 2025-present Stock Sawasdee
+footer: Copyright © 2025 Stock Sawasdee
 ---

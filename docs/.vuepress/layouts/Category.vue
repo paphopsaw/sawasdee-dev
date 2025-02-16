@@ -11,7 +11,7 @@ const categoryMap = useBlogCategory("category");
 <template>
   <ParentLayout>
     <template #page>
-      <main class="page">
+      <main class="vp-page">
         <div class="category-wrapper">
           <RouteLink
             v-for="({ items, path }, name) in categoryMap.map"
@@ -39,8 +39,7 @@ const categoryMap = useBlogCategory("category");
 .category-wrapper {
   @include mixins.content_wrapper;
 
-  padding-top: 1rem !important;
-  padding-bottom: 0 !important;
+  padding-top: 3.6rem;
 
   font-size: 14px;
 

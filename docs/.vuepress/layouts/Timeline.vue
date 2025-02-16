@@ -9,7 +9,7 @@ const timelines = useBlogType("timeline");
 <template>
   <ParentLayout>
     <template #page>
-      <main class="page">
+      <main class="vp-page">
         <h1 class="timeline-title">Timeline</h1>
 
         <ArticleList :items="timelines.items" is-timeline />

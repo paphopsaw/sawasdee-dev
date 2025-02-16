@@ -5,8 +5,6 @@ defineProps({
     type: Array,
     required: true,
   },
-  /** Whether is timeline or not */
-  isTimeline: Boolean,
 });
 </script>
 
@@ -21,10 +19,7 @@ defineProps({
       @click="$router.push(path)"
     >
       <header class="title">
-        {{
-          (isTimeline ? `${new Date(info.date).toLocaleDateString()}: ` : "") +
-          info.title
-        }}
+        {{ info.title }}
       </header>
 
       <hr />
@@ -32,23 +27,17 @@ defineProps({
       <div class="article-info">
         <span v-if="info.author" class="author">Author: {{ info.author }}</span>
 
-        <span v-if="info.date && !isTimeline" class="date"
+        <span v-if="info.date" class="date"
           >Date: {{ new Date(info.date).toLocaleDateString() }}</span
-        >
-
-        <span v-if="info.category" class="category"
-          >Category: {{ info.category.join(", ") }}</span
         >
 
         <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(", ") }}</span>
       </div>
-
-      <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
     </article>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@vuepress/theme-default/styles/mixins";
 
 .article-wrapper {
@@ -123,20 +112,6 @@ defineProps({
     > span {
       margin-inline-end: 0.5em;
       line-height: 1.8;
-    }
-  }
-
-  .excerpt {
-    h1 {
-      display: none;
-    }
-
-    h2 {
-      font-size: 1.2em;
-    }
-
-    h3 {
-      font-size: 1.15em;
     }
   }
 }

@@ -1,39 +1,34 @@
 <script setup>
-import { useBlogCategory } from "@vuepress/plugin-blog/client";
-import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
 import { RouteLink, useRoute } from "vuepress/client";
-import ArticleList from "../components/ArticleList.vue";
+const props = defineProps({
+  /** Tag items */
+  tags: {
+    type: Object,
+    required: true,
+  },
+});
 
 const route = useRoute();
-const tagMap = useBlogCategory("tag");
 </script>
 
 <template>
-  <ParentLayout>
-    <template #page>
-      <main class="vp-page">
-        <div class="tag-wrapper">
-          <RouteLink
-            v-for="({ items, path }, name) in tagMap.map"
-            :key="name"
-            :to="path"
-            :active="route.path === path"
-            class="tag"
-          >
-            {{ name }}
-            <span class="tag-num">
-              {{ items.length }}
-            </span>
-          </RouteLink>
-        </div>
-
-        <ArticleList :items="tagMap.currentItems ?? []" />
-      </main>
-    </template>
-  </ParentLayout>
+  <div class="tag-wrapper">
+    <RouteLink
+      v-for="({ items, path }, name) in tags"
+      :key="name"
+      :to="path"
+      :active="route.path === path"
+      class="tag"
+    >
+      {{ name }}
+      <span class="tag-num">
+        {{ tags.length }}
+      </span>
+    </RouteLink>
+  </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@vuepress/theme-default/styles/mixins";
 
 .tag-wrapper {
